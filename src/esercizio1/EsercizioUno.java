@@ -20,6 +20,7 @@ public class EsercizioUno {
         try {
 
 
+
             System.out.println("scegli un numero");
             int scelta = scanner.nextInt();
 

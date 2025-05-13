@@ -12,14 +12,13 @@ public class ContoCorrente {
         this.nMovimenti = 0;
     }
 
-    public void preleva(double x) {
+    public void preleva(double x) throws BancaException {
         if (nMovimenti < maxMovimenti) saldo = saldo - x;
         else saldo = saldo - x - 0.50;
-        if(saldo <0){
-
-
-        }
         nMovimenti++;
+        if(saldo < 0){
+            throw new BancaException("Conto a zero!");
+        }
     }
 
     public double restituisciSaldo() {
